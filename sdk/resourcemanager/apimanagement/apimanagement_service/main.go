@@ -41,7 +41,7 @@ func main() {
 		log.Println("AZURE_SUBSCRIPTION_ID:", subscriptionID)
 	}	
 
-	cred, err := azidentity.NewDefaultAzureCredential(nil)
+	cred, err := azidentity.NewAzureCLICredential(nil)
 	if err != nil {
 		log.Fatal(err)
 	}
