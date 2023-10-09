@@ -42,6 +42,7 @@ func main() {
 		log.Fatal(err)
 	}
 	ctx := context.Background()
+	log.Println("cred:", cred)
 
 	resourcesClientFactory, err = armresources.NewClientFactory(subscriptionID, cred, nil)
 	if err != nil {
