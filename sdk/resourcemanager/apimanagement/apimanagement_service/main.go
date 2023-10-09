@@ -47,12 +47,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	ctx := context.Background()
+	
 
 	if err == nil {
 		log.Println("cred:", cred)
 	}	
-
+        ctx := context.Background()
+	
 	resourcesClientFactory, err = armresources.NewClientFactory(subscriptionID, cred, nil)
 	if err != nil {
 		log.Fatal(err)
