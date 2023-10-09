@@ -37,12 +37,19 @@ func main() {
 		log.Fatal("AZURE_SUBSCRIPTION_ID is not set.")
 	}
 
+	if len(subscriptionID) != 0 {
+		log.Println("AZURE_SUBSCRIPTION_ID:", subscriptionID)
+	}	
+
 	cred, err := azidentity.NewDefaultAzureCredential(nil)
 	if err != nil {
 		log.Fatal(err)
 	}
 	ctx := context.Background()
-	log.Println("cred:", cred)
+
+	if err == nil {
+		log.Println("cred:", cred)
+	}	
 
 	resourcesClientFactory, err = armresources.NewClientFactory(subscriptionID, cred, nil)
 	if err != nil {
